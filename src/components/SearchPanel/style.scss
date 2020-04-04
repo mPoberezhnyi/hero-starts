@@ -1,0 +1,31 @@
+@import "../../variables";
+
+.search-panel {
+  @include flex(row, space-between, center)
+  font-size: 16px;
+}
+
+.search-panel__input {
+  height: 40px;
+  width: calc(100% - 80px);
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-panel__button {
+  height: 40px;
+  width: 60px;
+  border-radius: 4px;
+  border: 0;
+  font-size: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}

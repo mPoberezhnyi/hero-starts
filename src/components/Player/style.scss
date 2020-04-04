@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.heros-item {
+  @include flex(row, center, center);
+
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+  &.in-search {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.teams-item {
+  width: 100%;
+  max-width: 320px;
+}
+
+.heros-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}

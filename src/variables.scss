@@ -1,0 +1,31 @@
+// responsive
+$tablet: 768px;
+$desktop: 1200px;
+
+// colors
+$gray-dark: gray;
+$gray-light: gray;
+$white: white;
+$black: black;
+
+// font sizes
+$font-size-main: '';
+$font-size-title-h1: '';
+$font-size-title-h2: '';
+$font-size-title-h3: '';
+$font-size-title-h4: '';
+
+// fonts family
+//%Montserrat-l {
+//	font-family: 'Montserrat', sans-serif;
+//	font-style: normal;
+//	font-weight: 300;
+//}
+
+// mixins
+@mixin flex($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
