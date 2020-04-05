@@ -22,12 +22,6 @@ const HomePage = () => {
 
 		return herosList.map(item => {
 
-			// const inSearch = item.name.toLowerCase().indexOf(searchReqest.toLowerCase()) > -1;
-
-			console.log('item: ', item.localized_name.toLowerCase())
-			console.log('search: ', searchReqest.toLowerCase())
-			console.log('=====================================================')
-
 			const inSearch = item.localized_name.toLowerCase().indexOf(searchReqest.toLowerCase()) === 0;
 
 			if (!inSearch) {
@@ -56,8 +50,15 @@ const HomePage = () => {
 	)
 
 	const enterSearchRequest = (request) => {
-		console.log(request, request.length)
-		setSearchReqest(request)
+		console.log('request: ', request);
+		if (!request.length) {
+			console.log('if')
+			setSearchReqest('')
+		}
+		else {
+			console.log('else')
+			setSearchReqest(request)
+		}
 		updateList(heros)
 	}
 

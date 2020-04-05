@@ -2,9 +2,9 @@ import React from 'react'
 
 const CharacteristicsHero = ({hero}) => {
 
-	const characteristicsHero = Object.keys(hero).map(item => {
+	const characteristicsHero = hero && Object.keys(hero).map((item, index) => {
 		return (
-			<tr key={hero.id}>
+			<tr key={index}>
 				<td>{item}</td>
 				<td>{hero[item]}</td>
 			</tr>
@@ -15,8 +15,8 @@ const CharacteristicsHero = ({hero}) => {
 		<table>
 			<thead>
 			<tr>
-				<td>key</td>
-				<td>value</td>
+				<td><h3>key</h3>key</td>
+				<td><h3>value</h3></td>
 			</tr>
 			</thead>
 			<tbody>{characteristicsHero}</tbody>
