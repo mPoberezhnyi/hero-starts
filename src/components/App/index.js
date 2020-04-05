@@ -1,24 +1,41 @@
-import React, { Component } from 'react';
+import React, {useEffect, useState} from 'react';
+import {HerosServiceProvider} from "../HerosServiceContext";
 import Header from '../Header'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { HomePage, HeroPage } from '../../Pages'
+import HerosService from '../../service'
 import './style.scss';
 
-class App extends Component {
+const herosService = new HerosService()
 
-	render() {
-		return (
-			<div className="App">
-				<Header />
-				<div className="container">
-					<Switch>
-						<Route path="/" component={ HomePage } exact />
-						<Route path="/:herosName" component={ HeroPage } />
-					</Switch>
-				</div>
-			</div>
-		);
+const App = () => {
+
+	const [heros, setHeros] = useState([])
+
+	useEffect(() => {
+		createTeams()
+	}, [])
+
+	const createTeams = async () => {
+		const herosList = await herosService.getHeros()
+		setHeros(herosList)
 	}
+
+	return (
+		<div className="App">
+			<HerosServiceProvider value={heros}>
+				<Router>
+					<Header />
+					<div className="container">
+						<Switch>
+							<Route path="/" component={ HomePage } exact />
+							<Route path="/:herosName" component={ HeroPage } />
+						</Switch>
+					</div>
+				</Router>
+			</HerosServiceProvider>
+		</div>
+	);
 }
 
-export default App;
+export default App

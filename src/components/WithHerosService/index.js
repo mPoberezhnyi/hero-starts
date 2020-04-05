@@ -1,5 +1,5 @@
 import React from 'react'
-import { HerosServiceConsumer } from '../StoreServiceContext'
+import { HerosServiceConsumer } from '../HerosServiceContext'
 
 const WithHerosService = () => (Wrapped) => {
 	return (props) => {

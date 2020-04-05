@@ -8,7 +8,7 @@ const Player = ({hero: {icon, name, localized_name, inSearch}}) => {
 	const classList = inSearch ? 'heros-item in-search' : 'heros-item'
 
 	return (
-		<Link to={`/${localized_name.toLowerCase()}`}
+		<Link to={`/${name.toLowerCase()}`}
 			  className={classList}>
 			<img className="heros-item__img" src={`${MAIN_DOMAIN}${icon}`}
 				 alt={name}

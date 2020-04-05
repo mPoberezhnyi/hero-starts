@@ -3,7 +3,7 @@ import { MAIN_API_DOMAIN } from "./constants";
 
 class HerosService {
 
-	getHeros = async() => {
+	getHeros = async () => {
 		try {
 			const { data } = await axios.get(`${MAIN_API_DOMAIN}/heroStats`)
 			return data
