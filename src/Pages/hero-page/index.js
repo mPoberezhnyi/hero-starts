@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import CharacteristicsHero from '../components/CharacteristicsHero'
-import { HerosContext } from '../components/HerosServiceContext'
-import { MAIN_DOMAIN } from "../constants";
+import CharacteristicsHero from '../../components/CharacteristicsHero'
+import { HerosContext } from '../../components/HerosServiceContext'
+import { MAIN_DOMAIN } from "../../constants";
+import './style.scss'
 
 const HeroPage = ({match}) => {
 

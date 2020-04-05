@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-import SearchPanel from '../components/SearchPanel'
-import TeamList from '../components/TeamList'
-import { HerosContext } from '../components/HerosServiceContext'
-import { TEAM_LISTS } from "../constants";
+import SearchPanel from '../../components/SearchPanel'
+import TeamList from '../../components/TeamList'
+import { HerosContext } from '../../components/HerosServiceContext'
+import { TEAM_LISTS } from "../../constants";
+import './style.scss'
 
 const HomePage = () => {
 

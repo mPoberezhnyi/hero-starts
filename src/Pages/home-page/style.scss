@@ -1,0 +1,11 @@
+@import "../../variables";
+
+.teams-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+  }
+}

@@ -4,7 +4,6 @@ import Header from '../Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { HomePage, HeroPage } from '../../Pages'
 import HerosService from '../../service'
-import './style.scss';
 
 const herosService = new HerosService()
 
