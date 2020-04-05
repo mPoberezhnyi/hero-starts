@@ -1,22 +1,28 @@
 import React from 'react'
 import './style.scss'
 
-const SearchPanel = ({ enterSearchRequest }) => {
+const SearchPanel = ({ enterSearchRequest, onClickSearch }) => {
 
 	const onChangeSearch = (e) => {
 		enterSearchRequest(e.target.value)
 	}
 
+	const onSubmitHandler = (e) => {
+		e.preventDefault()
+		onClickSearch()
+	}
+
 	return (
-		<div className="search-panel">
+		<form className="search-panel"
+			  onSubmit={onSubmitHandler}>
 			<input className="search-panel__input"
 				   type="text"
 				   onChange={onChangeSearch} />
 			<button className="search-panel__button"
-					type="button">
+					type="submit" >
 				Search
 			</button>
-		</div>
+		</form>
 	)
 }
 

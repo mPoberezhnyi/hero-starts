@@ -3,11 +3,15 @@
 .teams-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+  }
 }
 
 .hero-page {
-  @include flex(column, center, flex-start);
+  @include flex(column, flex-start, center);
 
   @media screen and (min-width: $tablet) {
     @include flex(row, flex-start, flex-start);
@@ -19,17 +23,17 @@
   }
 
   &__img-wrap {
-    width: 50%;
+    width: 100%;
     padding-right: 32px;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      text-align: left;
+      width: 50%;
+    }
   }
 
   &__img {
     max-width: 100%;
-  }
-
-  &__characteristics {
-    table {
-      width: 100%;
-    }
   }
 }

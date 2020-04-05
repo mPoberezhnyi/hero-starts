@@ -9,13 +9,28 @@
   cursor: pointer;
 
   &.in-search {
+    position: relative;
     width: 48px;
     height: 48px;
+    animation-duration: 1s;
+    animation-name: zoomIn;
   }
 
   &__img {
     width: 100%;
     height: auto;
     max-height: 100%;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    width: 32px;
+    height: 32px;
+  }
+
+  to {
+    width: 48px;
+    height: 48px;
   }
 }

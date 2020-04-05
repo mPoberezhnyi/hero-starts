@@ -16,13 +16,10 @@ const HomePage = () => {
 	}, [heros])
 
 	const search = herosList => {
-		if (searchReqest.length === 0) {
-			return herosList
-		}
 
 		return herosList.map(item => {
 
-			const inSearch = item.localized_name.toLowerCase().indexOf(searchReqest.toLowerCase()) === 0;
+			const inSearch = item.localized_name.toLowerCase().indexOf(searchReqest.toLowerCase()) === 0 && searchReqest.length;
 
 			if (!inSearch) {
 				return {
@@ -50,21 +47,17 @@ const HomePage = () => {
 	)
 
 	const enterSearchRequest = (request) => {
-		console.log('request: ', request);
-		if (!request.length) {
-			console.log('if')
-			setSearchReqest('')
-		}
-		else {
-			console.log('else')
-			setSearchReqest(request)
-		}
+		setSearchReqest(request)
+	}
+
+	const onClickSearch = () => {
 		updateList(heros)
 	}
 
 	return (
 		<div>
-			<SearchPanel enterSearchRequest={enterSearchRequest} />
+			<SearchPanel enterSearchRequest={enterSearchRequest}
+						 onClickSearch={onClickSearch} />
 			<div className="teams-list">
 				{
 					teams.map(

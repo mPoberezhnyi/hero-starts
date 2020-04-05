@@ -1,8 +1,9 @@
 @import "../../variables";
 
 .search-panel {
-  @include flex(row, space-between, center)
+  @include flex(row, space-between, center);
   font-size: 16px;
+  margin-bottom: 32px;
 }
 
 .search-panel__input {
